@@ -1,0 +1,67 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>主体页</title><script src="/js/jquery-1.7.2.js"></script>
+ 
+<script src="/js/TopBody/Body.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/global.css" />
+  
+    <script type="text/javascript" src="../../js/global.js"></script>
+    <style type="text/css">
+        html, body, form {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+    <!--<script type="text/javascript">
+
+        function SwitchQryBar() {
+            if (document.getElementById("switchPoint").innerText == "opened") {
+
+                document.getElementById("switchPoint").innerText = "closed";
+                document.getElementById("BoardTitle").style.display = "none";
+                document.getElementById("direction").innerHTML = "打<br />开<br />查<br />询";
+            }
+            else if (document.getElementById("switchPoint").innerText == "closed") {
+
+                document.getElementById("switchPoint").innerText = "opened";
+                document.getElementById("BoardTitle").style.display = "";
+                document.getElementById("direction").innerHTML = "关<br />闭<br />查<br />询";
+            }
+        }
+        function Load() {
+            document.getElementById("loadDiv").style.display = "none";
+            document.getElementById("frmright").style.display = "";
+        }
+    </script>-->
+     
+      
+       
+</head>
+<body onload="Load()">
+    <table cellspacing="0" cellpadding="0" width="100%" style="height:100%;">
+        <tr>
+            <td valign="top">
+                <iframe id="BoardTitle" style="display: none; visibility: inherit; width: 200px; height: 100%" src="Left.aspx" frameborder="0" scrolling="yes"></iframe>
+
+            </td>
+            <td>
+                <table cellspacing="0" cellpadding="0" border="0" style="height:100%; width:16px;">
+                    <tr>
+                        <td style="text-align:center;cursor: pointer;width:16px; height: 100%;background:url(../../images/imgs/main1.gif) repeat; vertical-align:top; padding-top:30px;" onclick="SwitchQryBar()">
+                            <span style="display:none;" id="switchPoint" title="关闭/打开左栏">closed</span>
+                            <span id="direction" style="color:red; font-weight:bold; font-size:14px;">打<br />开<br />查<br />询</span>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 100%"><div id="loadDiv" style="display:block;position:absolute;top:50%;left:40%;"><img src="/images/Loading/8.gif" /></div>
+                <iframe id="frmright" style="visibility: inherit; width: 100%; height: 100%" name="frmright" src="List.aspx" frameborder="0" scrolling="auto"></iframe>
+            </td>
+        </tr>
+    </table>
+     
+</body>
+</html>

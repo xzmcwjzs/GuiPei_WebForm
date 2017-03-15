@@ -1,0 +1,37 @@
+﻿<!--<!DOCTYPE html>-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   <title>框架页</title>
+    <script type="text/javascript">
+        function SwitchQryBar() {
+            bodyFrame = document.getElementById("bodyFrame");
+            topFrame = document.getElementById("topFrame");
+            if (bodyFrame.document.getElementById("switchPoint").innerText == "opened") {
+                topFrame.document.getElementById("qryImg").src = "../../images/imgs/arrow_right.gif";
+                topFrame.document.getElementById("qryTitle").innerText = " 打开查询";
+                bodyFrame.document.getElementById("switchPoint").innerText = "closed";
+                bodyFrame.document.getElementById("BoardTitle").style.display = "none";
+                bodyFrame.document.getElementById("direction").innerHTML = "打<br />开<br />查<br />询";
+            }
+            else if (bodyFrame.document.getElementById("switchPoint").innerText == "closed") {
+                topFrame.document.getElementById("qryImg").src = "../../images/imgs/arrow_left.gif";
+                topFrame.document.getElementById("qryTitle").innerText = " 关闭查询";
+                bodyFrame.document.getElementById("switchPoint").innerText = "opened";
+                bodyFrame.document.getElementById("BoardTitle").style.display = "";
+                bodyFrame.document.getElementById("direction").innerHTML = "关<br />闭<br />查<br />询";
+            }
+        }
+    </script>
+</head>
+<frameset rows="22,*" cols="*" framespacing="0" frameborder="no" border="0">
+    <frame src="Top.aspx" id="topFrame" name="topFrame" scrolling="no" noresize=noresize>
+    </frame><frame src="Body.html" id="bodyFrame" name="bodyFrame" scrolling="no">
+    <noframes><body>
+        该浏览器无法处理框架
+    </body></noframes>
+</frame></frameset>
+
+</html>
+

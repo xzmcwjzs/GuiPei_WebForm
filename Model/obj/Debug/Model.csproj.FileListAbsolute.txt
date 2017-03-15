@@ -1,0 +1,10 @@
+G:\ASP.NET示例\住院医师规范化培训系统\Model\bin\Debug\Model.dll
+G:\ASP.NET示例\住院医师规范化培训系统\Model\bin\Debug\Model.pdb
+G:\ASP.NET示例\住院医师规范化培训系统\Model\obj\Debug\Model.dll
+G:\ASP.NET示例\住院医师规范化培训系统\Model\obj\Debug\Model.pdb
+G:\ASP.NET示例\住院医师规范化培训系统\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\王杰-锅只是个传说\住医规培系统\住院医师规范化培训系统\Model\bin\Debug\Model.dll
+D:\王杰-锅只是个传说\住医规培系统\住院医师规范化培训系统\Model\bin\Debug\Model.pdb
+D:\王杰-锅只是个传说\住医规培系统\住院医师规范化培训系统\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\王杰-锅只是个传说\住医规培系统\住院医师规范化培训系统\Model\obj\Debug\Model.dll
+D:\王杰-锅只是个传说\住医规培系统\住院医师规范化培训系统\Model\obj\Debug\Model.pdb

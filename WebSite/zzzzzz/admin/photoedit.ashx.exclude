@@ -1,0 +1,191 @@
+﻿<%@ WebHandler Language="C#" Class="photoedit" %>
+
+using System;
+using System.Web;
+using System.Collections.Generic;
+using MyPhotos.BLL;
+using MyPhotos.Model;
+using Common;
+public class photoedit : IHttpHandler
+{
+
+    public void ProcessRequest(HttpContext context)
+    {
+        context.Response.ContentType = "text/html";
+
+        bool ispostback = !string.IsNullOrEmpty(context.Request.Form["_viewstate"]);
+        //delete  add  edit
+        string action = context.Request.QueryString["action"];
+        if (!ispostback)
+        {
+            //首次加载
+           
+            if (action == "delete")
+            {
+                Delete(context);
+            }
+            else if (action == "add")
+            {
+                AddView();
+            }
+            else if (action == "edit")
+            {
+                EditView();
+            }
+        }
+        else
+        {
+             //表单提交
+            if (action == "add")
+            {
+                AddPost(context);
+            }
+            else if (action == "edit")
+            {
+                EditPost();
+            }
+        }
+    }
+
+    private void EditPost()
+    { 
+        HttpRequest request = HttpContext.Current.Request;
+        
+        string s = HttpContext.Current.Request.QueryString["id"];
+        int id;
+        if (int.TryParse(s, out id))
+        {
+            Photos p = new Photos();
+            p.PTypeId = int.Parse(request.Form["ddlTypeId"]);
+            p.PTitle = request["txtTitle"];
+            p.PUrl = request["txtUrl"];
+            p.PDes = request["txtDes"];
+            p.PId = id;
+
+            PhotoBLL bll = new PhotoBLL();
+            if (bll.Update(p))
+            {
+                WebCommon.AlertAndRedirect("修改成功", "photo.ashx");
+            }
+            else
+            {
+                WebCommon.Alert("修改失败");
+                EditView();
+            }
+        }
+        else
+        { 
+            //手贱
+        }
+    }
+    
+    /// <summary>
+    /// 页面第一次加载，并action=edit 显示编辑的视图
+    /// </summary>
+    private void EditView()
+    {
+        string s = HttpContext.Current.Request.QueryString["id"];
+        int id;
+        if (int.TryParse(s, out id))
+        {
+            PhotoTypeBLL bll = new PhotoTypeBLL();
+            List<PhotoType> list = bll.GetAllPhotoType();
+            
+            PhotoBLL pbll = new PhotoBLL();
+            Photos p = pbll.GetPhotoById(id);
+
+            
+            var data = new { list=list,p=p};
+            
+            NVelocityHelper helper = new NVelocityHelper("data", data);
+            helper.Render("admin/editphoto.html");
+            
+        }
+        else
+        { 
+            //提示并跳转  手贱
+        }
+        
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="context"></param>
+    private void AddPost(HttpContext context)
+    {
+        //判断是否为空todo...
+        
+        Photos p = new Photos();
+        p.PTypeId = int.Parse(context.Request.Form["ddlTypeId"]);
+        p.PTitle = context.Request.Form["txtTitle"];
+        p.PUrl = context.Request.Form["txtUrl"];
+        p.PDes = context.Request.Form["txtDes"];
+
+        PhotoBLL bll = new PhotoBLL();
+        if (bll.Add(p))
+        {
+            WebCommon.AlertAndRedirect("添加成功", "photo.ashx");
+        }
+        else {
+            WebCommon.Alert("添加失败");
+            AddView();
+        }
+    }
+
+    /// <summary>
+    /// 输出视图
+    /// </summary>
+    private void AddView()
+    {
+
+        PhotoTypeBLL bll = new PhotoTypeBLL();
+        List<PhotoType> list = bll.GetAllPhotoType();
+
+        NVelocityHelper helper = new NVelocityHelper("data", list);
+        helper.Render("admin/addphoto.html");
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="context"></param>
+    private void Delete(HttpContext context)
+    {
+        string msg = "";
+        string s = context.Request.QueryString["id"];
+        int id;
+        if (int.TryParse(s, out id))
+        {
+            PhotoBLL bll = new PhotoBLL();
+            //1 成功 -1 失败  0 有评论
+            int r = bll.Delete(id);
+            switch (r)
+            {
+                case 1:
+                    //提示并跳转
+                    msg = "删除成功";
+                    break;
+                case -1:
+                    msg = "删除失败";
+                    break;
+                case 0:
+                    msg = "请先删除评论";
+                    break;
+            }
+        }
+        else
+        {
+            msg = "手贱";
+        }
+        WebCommon.AlertAndRedirect(msg, "photo.ashx");
+    }
+    public bool IsReusable
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+}

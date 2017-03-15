@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{631FB77B-41CC-440A-9341-A50BBC4BAF21}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdviceFeedbackModel.cs" />
+    <Compile Include="AreaModel.cs" />
+    <Compile Include="AttendanceManagementModel.cs" />
+    <Compile Include="BasesModel.cs" />
+    <Compile Include="BasicRotaryViewModel.cs" />
+    <Compile Include="BedManagementModel.cs" />
+    <Compile Include="BigMedicalRecordsModel.cs" />
+    <Compile Include="CityModel.cs" />
+    <Compile Include="DeptManagementModel.cs" />
+    <Compile Include="DiseaseRegister2Model.cs" />
+    <Compile Include="DiseaseRegisterModel.cs" />
+    <Compile Include="ICD9SurgeryModel.cs" />
+    <Compile Include="InDeptFellingModel.cs" />
+    <Compile Include="JoinResearchRecordsModel.cs" />
+    <Compile Include="JoinStudyActivitiesModel.cs" />
+    <Compile Include="JoinTeachingRecordsModel.cs" />
+    <Compile Include="LoginModel.cs" />
+    <Compile Include="ManagersModel.cs" />
+    <Compile Include="MedicalErrorModel.cs" />
+    <Compile Include="NeiKeOptionModel.cs" />
+    <Compile Include="OutDeptExamModel.cs" />
+    <Compile Include="OutpatientEmergencyModel.cs" />
+    <Compile Include="ProfessionalBaseDeptModel.cs" />
+    <Compile Include="ProfessionalBaseModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvinceModel.cs" />
+    <Compile Include="PublishArticalRecordsModel.cs" />
+    <Compile Include="QuestionnaireModel.cs" />
+    <Compile Include="ReceiveHonourModel.cs" />
+    <Compile Include="ReleaseNewsModel.cs" />
+    <Compile Include="RescuePatientRecordsModel.cs" />
+    <Compile Include="RotaryInformationJoinModel.cs" />
+    <Compile Include="RotaryScheduleModel.cs" />
+    <Compile Include="SkillRequirement2Model.cs" />
+    <Compile Include="SkillRequirementModel.cs" />
+    <Compile Include="StudentsModel.cs" />
+    <Compile Include="StudentsPersonalInformation2Model.cs" />
+    <Compile Include="StudentsPersonalInformationModel.cs" />
+    <Compile Include="StudentsRotaryInformation2Model.cs" />
+    <Compile Include="StudentsRotaryModel.cs" />
+    <Compile Include="StudyAndReadingModel.cs" />
+    <Compile Include="SurgeryRecordsModel.cs" />
+    <Compile Include="TeachersAppointInformationModel.cs" />
+    <Compile Include="TeachersModel.cs" />
+    <Compile Include="TiKuResultModel.cs" />
+    <Compile Include="TrainingBaseModel.cs" />
+    <Compile Include="TrainingTeachingActivitiesModel.cs" />
+    <Compile Include="WriteMedicalRecordsModel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

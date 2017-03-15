@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF3728F1-B5FC-4521-ADBB-5F0EA5654713}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdviceFeedbackBLL.cs" />
+    <Compile Include="AreaBLL.cs" />
+    <Compile Include="AttendanceManageBLL.cs" />
+    <Compile Include="BasesBLL.cs" />
+    <Compile Include="BasicRotaryViewBLL.cs" />
+    <Compile Include="BedManagementBLL.cs" />
+    <Compile Include="BigMedicalRecordsBLL.cs" />
+    <Compile Include="CityBLL.cs" />
+    <Compile Include="DeptManagementBLL.cs" />
+    <Compile Include="DiseaseRegister2BLL.cs" />
+    <Compile Include="DiseaseRegisterBLL.cs" />
+    <Compile Include="ICD9SurgeryBLL.cs" />
+    <Compile Include="InDeptFellingBLL.cs" />
+    <Compile Include="JoinResearchRecordsBLL.cs" />
+    <Compile Include="JoinStudyActivitiesBLL.cs" />
+    <Compile Include="JoinTeachingRecordsBLL.cs" />
+    <Compile Include="LoginBLL.cs" />
+    <Compile Include="ManagersBLL.cs" />
+    <Compile Include="MedicalErrorBLL.cs" />
+    <Compile Include="NeiKeOptionBLL.cs" />
+    <Compile Include="OutDeptExamBLL.cs" />
+    <Compile Include="OutpatientEmergencyBLL.cs" />
+    <Compile Include="ProfessionalBaseBLL.cs" />
+    <Compile Include="ProfessionalBaseDeptBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvinceBLL.cs" />
+    <Compile Include="PublishArticalRecordsBLL.cs" />
+    <Compile Include="QuestionnaireBLL.cs" />
+    <Compile Include="ReceiveHonourBLL.cs" />
+    <Compile Include="ReleaseNewsBLL.cs" />
+    <Compile Include="RescuePatientRecordsBLL.cs" />
+    <Compile Include="RotaryInformationJoinBLL.cs" />
+    <Compile Include="RotaryScheduleBLL.cs" />
+    <Compile Include="SchoolInformationBLL.cs" />
+    <Compile Include="SkillRequirement2BLL.cs" />
+    <Compile Include="SkillRequirementBLL.cs" />
+    <Compile Include="StudentsBLL.cs" />
+    <Compile Include="StudentsPersonalInformation2BLL.cs" />
+    <Compile Include="StudentsPersonalInformationBLL.cs" />
+    <Compile Include="StudentsRotaryBLL.cs" />
+    <Compile Include="StudentsRotaryInformation2BLL.cs" />
+    <Compile Include="StudyAndReadingBLL.cs" />
+    <Compile Include="SurgeryRecordsBLL.cs" />
+    <Compile Include="TeachersAppointInformationBLL.cs" />
+    <Compile Include="TeachersBLL.cs" />
+    <Compile Include="TiKuResultBLL.cs" />
+    <Compile Include="TrainingBaseBLL.cs" />
+    <Compile Include="TrainingTeachingActivitiesBLL.cs" />
+    <Compile Include="WriteMedicalRecordsBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{8f404409-7259-48f1-86c3-c49b5545c2bb}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{631fb77b-41cc-440a-9341-a50bbc4baf21}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

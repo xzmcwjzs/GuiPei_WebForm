@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script src="js/jqueryAutocomplete/jquery.autocomplete.js"></script>
+    <link href="js/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+           
+            var emails = [
+    { name: "王杰", to: "张三" },
+    { name: "Molly", to: "molly@yahoo.com" },
+    { name: "Forneria Marconi", to: "live@japan.jp" },
+    { name: "Master <em>Sync</em>", to: "205bw@samsung.com" },
+    { name: "Dr. <strong>Tech</strong> de Log", to: "g15@logitech.com" },
+    { name: "Don Corleone", to: "don@vegas.com" },
+    { name: "Mc Chick", to: "info@donalds.org" },
+    { name: "Donnie Darko", to: "dd@timeshift.info" },
+    { name: "Quake The Net", to: "webmaster@quakenet.org" },
+    { name: "Dr. Write", to: "write@writable.com" }
+            ];
+            //emails的数组格式如上，formatItem代表的是显示的格式，formatMatch表示匹配的内容，formatResult表示结果的内容  
+
+            $("#tags").autocomplete(emails, {
+                minChars: 0,
+                width: 310,
+                matchContains: true,
+                autoFill: false,
+                max: 20,
+                scrollHeight: 200,
+                formatItem: function (row, i, max) {
+                    return i + "/" + max + ": \"" + row.name + "\" [" + row.to + "]";
+                },
+                formatMatch: function (row, i, max) {
+                    return row.name + " " + row.to;
+                },
+                formatResult: function (row) {
+                    return row.to;
+                }
+            });
+           
+        });
+
+
+    </script>
+</head>
+<body>
+    <input id="tags" type="text" size="30" />
+    <input id="Button1" type="button" value="button" />
+</body>
+</html>

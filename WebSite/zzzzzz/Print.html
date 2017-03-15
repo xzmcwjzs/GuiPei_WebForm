@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="../js/jquery-1.7.2.js"></script>
+    <script src="../js/jquery.jqprint-0.3.js"></script>
+    <script type="text/javascript">
+        function a() {
+            $("#ddd").jqprint();
+        }
+  </script>
+</head>
+<body>
+   <div id="ddd">
+    <table>
+        <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+        </tr>
+    </table>
+</div>
+    <input type="button" onclick="a();" value="打印"/>
+    <input type="button" onclick="window.print();" value="打印2"/>
+</body>
+     
+</html>
+

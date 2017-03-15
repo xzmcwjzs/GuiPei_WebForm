@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F404409-7259-48F1-86C3-C49B5545C2BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdviceFeedbackDAL.cs" />
+    <Compile Include="AreaDAL.cs" />
+    <Compile Include="AttendanceManagementDAL.cs" />
+    <Compile Include="BasesDAL.cs" />
+    <Compile Include="BasicRotaryViewDAL.cs" />
+    <Compile Include="BedManagementDAL.cs" />
+    <Compile Include="BigMedicalRecordsDAL.cs" />
+    <Compile Include="CityDAL.cs" />
+    <Compile Include="DeptManagementDAL.cs" />
+    <Compile Include="DiseaseRegister2DAL.cs" />
+    <Compile Include="DiseaseRegisterDAL.cs" />
+    <Compile Include="ICD9SurgeryDAL.cs" />
+    <Compile Include="InDeptFellingDAL.cs" />
+    <Compile Include="JoinResearchRecordsDAL.cs" />
+    <Compile Include="JoinStudyActivitiesDAL.cs" />
+    <Compile Include="JoinTeachingRecordsDAL.cs" />
+    <Compile Include="LoginDAL.cs" />
+    <Compile Include="ManagersDAL.cs" />
+    <Compile Include="MedicalErrorDAL.cs" />
+    <Compile Include="NeiKeOptionDAL.cs" />
+    <Compile Include="OutDeptExamDAL.cs" />
+    <Compile Include="OutpatientEmergencyDAL.cs" />
+    <Compile Include="ProfessionalBaseDAL.cs" />
+    <Compile Include="ProfessionalBaseDeptDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvinceDAL.cs" />
+    <Compile Include="PublishArticalRecordsDAL.cs" />
+    <Compile Include="QuestionnaireDAL.cs" />
+    <Compile Include="ReceiveHonourDAL.cs" />
+    <Compile Include="ReleaseNewsDAL.cs" />
+    <Compile Include="RescuePatientRecordsDAL.cs" />
+    <Compile Include="RotaryInformationJoinDAL.cs" />
+    <Compile Include="RotaryScheduleDAL.cs" />
+    <Compile Include="SchoolInformationDAL.cs" />
+    <Compile Include="SkillRequirement2DAL.cs" />
+    <Compile Include="SkillRequirementDAL.cs" />
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="StudentsDAL.cs" />
+    <Compile Include="StudentsPersonalInformation2DAL.cs" />
+    <Compile Include="StudentsPersonalInformationDAL.cs" />
+    <Compile Include="StudentsRotaryDAL.cs" />
+    <Compile Include="StudentsRotaryInformation2DAL.cs" />
+    <Compile Include="StudyAndReadingDAL.cs" />
+    <Compile Include="SurgeryRecordsDAL.cs" />
+    <Compile Include="TeachersAppointInformationDAL.cs" />
+    <Compile Include="TeachersDAL.cs" />
+    <Compile Include="TiKuResultDAL.cs" />
+    <Compile Include="TrainingBaseDAL.cs" />
+    <Compile Include="TrainingTeachingActivitiesDAL.cs" />
+    <Compile Include="WriteMedicalRecordsDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{fb9bf7ad-77d4-4c03-8810-a8046e9e219d}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{631fb77b-41cc-440a-9341-a50bbc4baf21}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

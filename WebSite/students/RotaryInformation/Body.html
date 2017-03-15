@@ -1,0 +1,114 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>主体页</title>
+    <link type="text/css" rel="stylesheet" href="../../css/global.css" />
+    <style type="text/css">
+        #loader_container {
+            left: 0px;
+            width: 100%;
+            position: absolute;
+            TOP: 40%;
+            text-align: center;
+        }
+
+        #loader {
+            border: #5a667b 1px solid;
+            display: block;
+            font-size: 11px;
+            z-index: 2;
+            margin: 0px auto;
+            width: 230px;
+            color: #000;
+            font-family: Tahoma, Helvetica, sans;
+            background-color: #fff;
+            text-align: left;
+        }
+
+        #progress {
+            font-size: 1px;
+            left: 0px;
+            width: 1px;
+            position: relative;
+            top: 1px;
+            height: 5px;
+            background-color: #8894a8;
+        }
+
+        #loader_bg {
+            font-size: 1px;
+            left: 8px;
+            width: 213px;
+            position: relative;
+            top: 8px;
+            height: 7px;
+            background-color: #e4e7eb;
+        }
+    </style>
+    <script type="text/javascript" src="../../js/global.js"></script>
+    <script type="text/javascript">
+        var t_id = setInterval(animate, 20);
+        var pos = 0;
+        var dir = 2;
+        var len = 0;
+        function animate() {
+            var elem = document.getElementById('progress');
+            if (elem != null) {
+                if (pos == 0) len += dir;
+                if (len > 32 || pos > 179) pos += dir;
+                if (pos > 179) len -= dir;
+                if (pos > 179 && len == 0) pos = 0;
+                elem.style.left = pos;
+                elem.style.width = len;
+                if (document.getElementById("frmright").readyState == "complete") {
+                    remove_loading();
+                }
+            }
+        }
+        function remove_loading() {
+            this.clearInterval(t_id);
+            var targelem = document.getElementById('loader_container');
+            targelem.style.display = 'none';
+            targelem.style.visibility = 'hidden';
+        }
+        function stop_loading() {
+            document.execCommand('stop');		//停止当前页面的加载动作
+            remove_loading();
+            document.getElementById("frmright").src = ""			//点取消后进入什么页面
+        }
+    </script>
+</head>
+<body>
+    <table cellspacing="0" cellpadding="0" width="100%" style="height:100%;">
+        <tr>
+            <td valign="top">
+                <iframe id="BoardTitle" style="display: none; visibility: inherit; width: 200px; height: 100%" src="Left.aspx" frameborder="0" scrolling="yes"></iframe>
+
+            </td>
+            <td>
+                <table cellspacing="0" cellpadding="0" border="0" style="height:100%; width:16px;">
+                    <tr>
+                        <td style="text-align:center;cursor: pointer;width:16px; height: 100%;background:url(../../images/imgs/main1.gif) repeat; vertical-align:top; padding-top:30px;" onclick="parent.SwitchQryBar()">
+                            <span style="display:none;" id="switchPoint" title="关闭/打开左栏">closed</span>
+                            <span id="direction" style="color:red; font-weight:bold; font-size:14px;">打<br/>开<br/>查<br/>询</span>
+
+                                                </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 100%">
+                <iframe id="frmright" style="visibility: inherit; width: 100%; height: 100%" name="frmright" src="List.aspx" frameborder="0" scrolling="auto"></iframe>
+            </td>
+        </tr>
+    </table>
+
+    <div id="loader_container">
+        <div id="loader">
+            <div style="margin:auto;">正在加载数据，你也可以『<a href="javascript:stop_loading();">取消</a>』...</div>
+            <div id="loader_bg">
+                <div id="progress"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+D:\王杰-锅只是个传说\住医规培系统\住院医师规范化培训系统\Model\bin\Release\Model.dll
+D:\王杰-锅只是个传说\住医规培系统\住院医师规范化培训系统\Model\bin\Release\Model.pdb
+D:\王杰-锅只是个传说\住医规培系统\住院医师规范化培训系统\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+D:\王杰-锅只是个传说\住医规培系统\住院医师规范化培训系统\Model\obj\Release\Model.dll
+D:\王杰-锅只是个传说\住医规培系统\住院医师规范化培训系统\Model\obj\Release\Model.pdb

@@ -1,0 +1,74 @@
+﻿<!--<chart caption='Indian Premier League Points' xAxisName='满意度' yAxisName='比例'
+  showValues='0' formatNumberScale='0' showBorder='0'>
+  <set label='Mumbai Indians' value='16' />
+  <set label='Chennai Super Kings' value='14' />
+  <set label='Kolkata Riders' value='12' />
+  <set label='Bangalore Royals' value='14' />
+  <set label='Kochi Tuskers' value='10' />
+  <set label='Kings XI Punjab' value='10' />
+</chart>-->
+
+<chart caption='2014年和2013年年收入' xAxisName='月份' yAxisName='收入' showValues='0' useRoundEdges='0' baseFontSize='14'
+     baseFontColor='FF0000' bgColor='ff0000,00ff00' bordercolor='ffffff' canvasbgcolor='000000' labelDisplay='Rotate' slantLabels='1'
+       
+       >
+
+  <categories>
+    <category label='一月' />
+    <category label='二月' />
+    <category label='三月' />
+    <category label='四月' />
+    <category label='五月' />
+    <category label='六月' />
+    <category label='七月' />
+    <category label='八月' />
+    <category label='九月' />
+    <category label='十月' />
+    <category label='十一月' />
+    <category label='十二月 ' />
+  </categories>
+
+  <dataset seriesName='2014'>
+    <set value='27456' color='ffffff'/>
+    <set value='28950'/>
+    <set value='51100' />
+    <set value='29560' />
+    <set value='45120' />
+    <set value='95320' />
+    <set value='65231' />
+    <set value='36530' />
+    <set value='23321' />
+    <set value='32312' />
+    <set value='98856' />
+    <set value='21212' />
+  </dataset>
+  
+  <dataset seriesName='2013'>
+    <set value='23322'/>
+    <set value='23298'/>
+    <set value='78454'/>
+    <set value='23233'/>
+    <set value='45122' />
+    <set value='12212' />
+    <set value='23212' />
+    <set value='85455' />
+    <set value='55323' />
+    <set value='23233' />
+    <set value='62622' />
+    <set value='32333' />
+  </dataset>
+  <dataset seriesName='2013'>
+    <set value='23392'/>
+    <set value='29298'/>
+    <set value='71454'/>
+    <set value='63233'/>
+    <set value='15122' />
+    <set value='82212' />
+    <set value='21212' />
+    <set value='15455' />
+    <set value='35323' />
+    <set value='23533' />
+    <set value='12622' />
+    <set value='72333' />
+  </dataset>
+</chart>
